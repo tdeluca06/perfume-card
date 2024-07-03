@@ -1,0 +1,132 @@
+/*CSS Reset*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* responsive pictures */
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+/* to make it easier to work in percentages */
+html,
+body{
+    height: 100%;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+/* to prevent text overflow - prevent horizontal scrolling */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --clr-green: hsl(158, 36%, 37%);
+    --clr-cream: hsl(30, 38%, 92%);
+    --clr-dark-blue: hsl(212, 21%, 14%);
+    --clr-dark-grey: hsl(228, 12%, 48%);
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --ff-main: 'Montserrat', sans-serif;
+    --ff-accent: 'Fraunces', serif;
+}
+
+/* gen styling */
+body {
+    font-family: var(--ff-main);
+    font-weight: var(--fw-regular);
+    color: var(--clr-dark-grey);
+    font-size: 0.875rem;
+    background-color: var(--clr-cream);
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+    line-height: 1;
+}
+
+.product {
+    --content-padding: 1.5rem; /*locally scoped to just product class and its children*/
+    --content-spacing: 1rem;
+    display: grid;
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+@media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+    }
+}
+
+.product__content {
+    padding: var(--content-padding);
+    display: grid;
+    gap: var(--content-spacing);
+}
+
+.product__category {
+    letter-spacing: 0.35rem;
+}
+
+.product__title {
+    color: var(--clr-dark-blue);
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+}
+
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.product__price {
+    color: var(--clr-green);
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+}
+
+.product__original-price {
+    text-decoration: line-through;
+    margin-top: 0.75rem;
+}
+
+.btn {
+    background-color: var(--clr-green);
+    color: white;
+    font-weight: var(--fw-bold);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style:none;
+}
+
+.btn img{
+    margin-right: 1rem;
+}
+
+.btn:hover{
+    background-color: hsl(158, 36%, 15%);
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
